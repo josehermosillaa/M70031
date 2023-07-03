@@ -19,3 +19,23 @@ def addregister(request):
     post = Post(title=titulo, content=contenido, author=autor)
     post.save()
     return HttpResponseRedirect(reverse('index'))
+
+def delete(request, id):
+    post = Post.objects.get(id=id)
+    post.delete()
+    return HttpResponseRedirect(reverse('index'))
+
+def update(request,id):
+    post = Post.objects.get(id=id)
+    context = {'post': post}
+    return render(request, 'blogsite/actualizar.html', context)
+
+def updateregister(request, id):
+    post = Post.objects.get(id=id)
+    post.slug=None
+    post.title=request.POST['title']
+    post.content=request.POST['content']
+    post.author=request.POST['author']
+    post.save()
+    return HttpResponseRedirect(reverse('index'))
+    
