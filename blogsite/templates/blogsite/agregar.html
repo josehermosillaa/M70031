@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Post</title>
+</head>
+<body>
+    <h1>Agregar Post</h1>
+    <form action="/post/add/addregister/" method="post" >
+        {% csrf_token %}
+        Titulo:<br>
+        <input name="title">
+        <br><br>
+        Contenido:<br>
+        <input name="content">
+        <br><br>
+        Autor:<br>
+        <input name="author">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
