@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     #Mis apps
     "blogsite",
     "relaciones",
+    "migraciones",
 ]
 
 MIDDLEWARE = [
