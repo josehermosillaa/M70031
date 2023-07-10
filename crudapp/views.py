@@ -18,7 +18,12 @@ def insertar_emp_view(request):
 
 def mostrar_emp_view(request):
     empleados = Empleado.objects.all()
-    context = {'empleados': empleados}
+    num_visitas =request.session.get('num_visits', 1)
+    request.session['num_visits'] = num_visitas+1
+    context = {
+        'empleados': empleados,
+        'num_visitas':num_visitas,
+    }
     return render(request, 'crudapp/mostrar.html', context)
 
 def editar_emp_view(request,pk):
