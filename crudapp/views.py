@@ -47,3 +47,8 @@ def eliminar_emp_view(request,pk):
         return redirect('/crudapp/mostrar/')
     context={'empleado':empleado}
     return render(request, 'crudapp/eliminar.html', context)
+
+def empleado_detalle_view(request, pk):
+    empleado = Empleado.objects.get(id=pk)
+    context = {'empleado':empleado}
+    return render(request, 'crudapp/detalle.html',context=context)

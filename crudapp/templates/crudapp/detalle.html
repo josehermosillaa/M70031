@@ -1,0 +1,16 @@
+{% extends 'crudapp/base.html' %} {% block content %}
+<div class="card mx-auto m-3 p-3" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Información de Empleado: {{empleado.emp_nombre}}</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">{{empleado.emp_designacion}}</h6>
+      <p class="card-text">
+        <ul>
+            <li>Id empleado: {{empleado.emp_id}}</li>
+            <li>Correo: {{empleado.emp_id}}</li>
+        </ul>
+    </p>
+      <a href="{% url 'mostrar_emp' %}" class="card-link">Volver al Inicio</a>
+    </div>
+  </div>
+
+{% endblock content %}
